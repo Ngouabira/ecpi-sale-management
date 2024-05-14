@@ -53,7 +53,7 @@ public class CategoryService {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, category.getName());
             ps.setString(2, category.getDescription());
-            ResultSet rs = ps.executeQuery();
+            ps.execute();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -66,7 +66,7 @@ public class CategoryService {
             ps.setString(1, category.getName());
             ps.setString(2, category.getDescription());
             ps.setInt(3, category.getId());
-            ps.executeQuery();
+            ps.execute();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -77,7 +77,7 @@ public class CategoryService {
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, id);
-            ps.executeQuery();
+            ps.execute();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
