@@ -11,11 +11,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
-<tg:template title="Create category">
+<tg:template title="Edit category">
     <jsp:attribute name="content">
 
 
-                        <form method="post" action="${pageContext.request.contextPath}/category/create">
+                        <form method="post" action="${pageContext.request.contextPath}/category/update?id=${category.id}">
                             <div class="row p-4">
                                 <div class="col-12">
                                     <div class="card">
@@ -39,12 +39,12 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <label  class="col-form-label">Name</label>
-                                                    <input  type="text" required class="form-control" name='name'  placeholder="Name" />
+                                                    <input value="${category.name}"  type="text" required class="form-control" name='name'  placeholder="Name" />
                                                 </div>
 
                                                 <div class="col-12">
                                                     <label class="col-form-label">Description</label>
-                                                    <input  type="text" required class="form-control" name='description'  placeholder="Description" />
+                                                    <input value="${category.description}"  type="text" required class="form-control" name='description'  placeholder="Description" />
                                                 </div>
                                             </div>
 
